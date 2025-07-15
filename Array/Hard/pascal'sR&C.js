@@ -8,7 +8,7 @@ function main() {
   console.log(better(row-1, col-1))
 }
 
-function findRandC(n, r) {
+function findRandC(n, r) { 
   let nFact = 1;
 
   for (let i = n; i > 1; i--) {
@@ -35,7 +35,7 @@ function findRandC(n, r) {
 
 // better
 
-function better(n,r){
+function better(n,r){ // TC = O(r)
     let res = 1;
 
     for(let i=0; i < r; i++){  // the loop runs from n to r times,
