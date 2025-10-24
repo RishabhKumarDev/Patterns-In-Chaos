@@ -6,21 +6,27 @@ let found = false;
 
 function sumSub(i, arr, sum) {
   if (i >= nums.length) {
-    if (sum === k && !found) {
+    if (sum === k) {
       console.log(arr);
-      found = true;
+      return true;
     }
-    return;
+    return false;
   }
 
   arr.push(nums[i]);
   sum += nums[i];
-  sumSub(i + 1, arr, sum);
+  if (sumSub(i + 1, arr, sum)) {
+    return true;
+  }
 
   arr.pop();
   sum -= nums[i];
 
-  sumSub(i + 1, arr, sum);
+  if (sumSub(i + 1, arr, sum)) {
+    return true;
+  }
+
+  return false;
 }
 
 sumSub(0, arr, sum);
